@@ -5,593 +5,289 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary Meta Tags -->
-  <title>Rohit Patil — Cloud Computing Student | AWS & DevOps</title>
-  <meta name="title" content="Rohit Patil — Cloud Computing Student | AWS & DevOps" />
-  <meta name="description" content="Cloud Computing student passionate about AWS, DevOps, infrastructure monitoring, and building scalable cloud-native applications. Based in Pune, India." />
+  <title>Rohit Patil — Cloud, Code &amp; Craft</title>
+  <meta name="title" content="Rohit Patil — Cloud, Code & Craft" />
+  <meta name="description" content="Rohit Patil — a builder from Pune working across AWS infrastructure, web apps, and the messy middle where product meets platform. Cloud Computing @ MIT ADT University." />
   <meta name="author" content="Rohit Patil" />
-  <meta name="keywords" content="Rohit Patil, Cloud Computing, AWS, DevOps, Infrastructure Monitoring, Python, Portfolio, Cloud Engineer, Pune" />
-  <meta name="theme-color" content="#4F46E5" />
+  <meta name="keywords" content="Rohit Patil, Cloud Computing, AWS, DevOps, Full-stack, Web Apps, Portfolio, Pune, MIT ADT University" />
+  <meta name="theme-color" content="#F15A44" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Rohit Patil — Cloud Computing Student | AWS & DevOps" />
-  <meta property="og:description" content="Building cloud-native solutions & exploring modern infrastructure. AWS · DevOps · Monitoring." />
+  <meta property="og:title" content="Rohit Patil — Cloud, Code & Craft" />
+  <meta property="og:description" content="A builder from Pune working across AWS infrastructure, web apps, and the messy middle where product meets platform." />
   <meta property="og:url" content="https://github.com/rohitpatil9121" />
-  <meta property="og:site_name" content="Rohit Patil Portfolio" />
+  <meta property="og:site_name" content="Rohit Patil" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Rohit Patil — Cloud Computing Student | AWS & DevOps" />
-  <meta name="twitter:description" content="Building cloud-native solutions & exploring modern infrastructure." />
+  <meta name="twitter:title" content="Rohit Patil — Cloud, Code & Craft" />
+  <meta name="twitter:description" content="A builder from Pune working across cloud, product and craft." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind CSS (CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#4F46E5',
-            secondary: '#A855F7',
-            accent: '#F59E0B',
-            ink: '#0F172A',
-            sub: '#64748B',
-            soft: '#F8FAFC',
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            display: ['Space Grotesk', 'Inter', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-  <!-- Chart.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600;1,9..144,700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <!-- Custom styles -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="font-sans text-ink bg-white antialiased overflow-x-hidden">
+<body>
 
-  <!-- Scroll Progress Bar -->
-  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+  <!-- Scroll progress -->
+  <div id="scroll-progress" aria-hidden="true"></div>
 
-  <!-- Decorative gradient blobs -->
-  <div class="bg-decor" aria-hidden="true">
-    <span class="blob blob-1"></span>
-    <span class="blob blob-2"></span>
-    <span class="blob blob-3"></span>
-  </div>
-
-  <!-- ============ NAVBAR ============ -->
-  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
-    <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-2 font-display font-bold text-lg text-ink">
-        <span class="grid place-items-center w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-secondary text-white shadow-lg shadow-primary/30">
-          <i class="fa-solid fa-cloud text-sm"></i>
-        </span>
-        Rohit<span class="text-primary">.</span>
+  <!-- ============ HEADER ============ -->
+  <header id="site-header">
+    <div class="wrap header-inner">
+      <a href="#top" class="brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        Rohit Patil <span class="brand-slash">/</span> <span class="brand-loc">Pune, IN</span>
       </a>
-
-      <ul class="hidden md:flex items-center gap-1 text-sm font-medium">
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-
-      <div class="hidden md:flex items-center gap-3">
-        <a href="assets/resume/Rohit_Patil_Resume.pdf" download
-           class="px-4 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-primary to-secondary shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-0.5 transition-all">
-          <i class="fa-solid fa-download mr-1.5"></i>Resume
-        </a>
-      </div>
-
-      <!-- Hamburger -->
-      <button id="hamburger" class="md:hidden grid place-items-center w-10 h-10 rounded-lg text-ink hover:bg-soft transition" aria-label="Open menu" aria-expanded="false">
-        <i class="fa-solid fa-bars text-lg"></i>
-      </button>
-    </nav>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="#index">Index</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <span id="clock" class="clock" aria-label="Local time">--:-- IST</span>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
+    </div>
   </header>
 
-  <!-- Mobile drawer -->
-  <div id="mobile-overlay" class="fixed inset-0 z-40 bg-ink/30 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity md:hidden"></div>
-  <aside id="mobile-drawer" class="fixed top-0 right-0 z-50 h-full w-72 max-w-[80%] bg-white shadow-2xl translate-x-full transition-transform duration-300 md:hidden">
-    <div class="flex items-center justify-between h-16 px-5 border-b border-slate-100">
-      <span class="font-display font-bold text-lg">Menu</span>
-      <button id="drawer-close" class="grid place-items-center w-10 h-10 rounded-lg hover:bg-soft" aria-label="Close menu">
-        <i class="fa-solid fa-xmark text-lg"></i>
-      </button>
-    </div>
-    <ul class="flex flex-col p-4 gap-1 text-base font-medium">
-      <li><a href="#home" class="mobile-link"><i class="fa-solid fa-house w-5 text-primary"></i>Home</a></li>
-      <li><a href="#about" class="mobile-link"><i class="fa-solid fa-user w-5 text-primary"></i>About</a></li>
-      <li><a href="#skills" class="mobile-link"><i class="fa-solid fa-layer-group w-5 text-primary"></i>Skills</a></li>
-      <li><a href="#projects" class="mobile-link"><i class="fa-solid fa-folder-open w-5 text-primary"></i>Projects</a></li>
-      <li><a href="#education" class="mobile-link"><i class="fa-solid fa-graduation-cap w-5 text-primary"></i>Education</a></li>
-      <li><a href="#contact" class="mobile-link"><i class="fa-solid fa-envelope w-5 text-primary"></i>Contact</a></li>
-    </ul>
-    <div class="px-4 mt-2">
-      <a href="assets/resume/Rohit_Patil_Resume.pdf" download
-         class="block text-center px-4 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-primary to-secondary">
-        <i class="fa-solid fa-download mr-1.5"></i>Download Resume
-      </a>
-    </div>
-  </aside>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <a href="#work">Work</a>
+    <a href="#stack">Stack</a>
+    <a href="#index">Index</a>
+    <a href="#contact">Contact</a>
+  </div>
 
-  <!-- ============ HERO ============ -->
-  <section id="home" class="relative min-h-screen flex items-center pt-24 pb-16">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center w-full">
+  <main id="top">
 
-      <!-- Left -->
-      <div class="reveal">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-primary/10 text-primary mb-6">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-          </span>
-          Available for internships
-        </span>
-
-        <p class="text-sub font-medium mb-2">Hi there, I'm</p>
-        <h1 class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight">
-          Rohit Patil
-        </h1>
-        <h2 class="mt-4 text-2xl sm:text-3xl font-semibold text-ink/90">
-          <span id="typed" class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"></span><span class="typed-caret">|</span>
-        </h2>
-        <p class="mt-3 text-lg font-display text-ink/80 max-w-xl">
-          Building Cloud-Native Solutions &amp; Exploring Modern Infrastructure
-        </p>
-        <p class="mt-5 text-sub max-w-xl leading-relaxed">
-          Cloud Computing student passionate about AWS, DevOps, infrastructure monitoring,
-          and building scalable cloud-native applications.
-        </p>
-
-        <!-- CTAs -->
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#projects" class="btn-primary">
-            <i class="fa-solid fa-rocket"></i> View Projects
-          </a>
-          <a href="assets/resume/Rohit_Patil_Resume.pdf" download class="btn-ghost">
-            <i class="fa-solid fa-download"></i> Download Resume
-          </a>
-          <a href="#contact" class="btn-ghost">
-            <i class="fa-solid fa-paper-plane"></i> Contact Me
-          </a>
-        </div>
-
-        <!-- Socials -->
-        <div class="mt-8 flex items-center gap-4">
-          <a href="https://github.com/rohitpatil9121" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/rohit-patil-80b540308" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="mailto:rohitp9121@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        </div>
+    <!-- ============ HERO ============ -->
+    <section class="hero wrap">
+      <div class="hero-meta reveal">
+        <span>Vol. 01 — Issue 26</span>
+        <span class="dotsep">B.Tech · Cloud Computing</span>
+        <span class="dotsep">MIT ADT University</span>
       </div>
 
-      <!-- Right: floating info card -->
-      <div class="relative reveal" style="--delay:.15s">
-        <div class="float-slow glass-card rounded-3xl p-7 max-w-md mx-auto relative z-10">
-          <div class="flex items-center gap-4 pb-5 border-b border-slate-100">
-            <div class="grid place-items-center w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary text-white text-xl shadow-lg shadow-primary/30">
-              <i class="fa-solid fa-cloud"></i>
-            </div>
-            <div>
-              <p class="font-display font-bold text-lg leading-tight">Rohit Patil</p>
-              <p class="text-sm text-sub">Cloud Computing Student</p>
-            </div>
-            <span class="ml-auto text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">Online</span>
+      <div class="hero-grid">
+        <div class="hero-left">
+          <h1 class="display reveal">Cloud,<br /><em>code</em> &amp;<br />craft.</h1>
+
+          <p class="hero-intro reveal">
+            I'm <strong>Rohit Patil</strong> — a builder from Pune working across AWS
+            infrastructure, web apps, and the messy middle where product meets platform.
+            Not a DevOps-only guy: I ship <em>websites</em>, <em>apps</em>, and the pipes
+            underneath them.
+          </p>
+
+          <div class="hero-cta reveal">
+            <a href="#work" class="btn btn-solid">See the work <span aria-hidden="true">→</span></a>
+            <a href="#contact" class="btn btn-outline">Get in touch</a>
           </div>
-          <ul class="mt-5 space-y-3">
-            <li class="info-row"><i class="fa-brands fa-aws text-accent"></i><span>AWS Focus</span><i class="fa-solid fa-check ml-auto text-emerald-500"></i></li>
-            <li class="info-row"><i class="fa-solid fa-gears text-primary"></i><span>DevOps Learning</span><i class="fa-solid fa-check ml-auto text-emerald-500"></i></li>
-            <li class="info-row"><i class="fa-solid fa-chart-line text-secondary"></i><span>Infrastructure Monitoring</span><i class="fa-solid fa-check ml-auto text-emerald-500"></i></li>
-            <li class="info-row"><i class="fa-solid fa-location-dot text-rose-500"></i><span>Pune, India</span></li>
+        </div>
+
+        <div class="hero-right reveal">
+          <figure class="portrait">
+            <img src="assets/images/portrait-CXZoRDIl.jpg" alt="Illustrated portrait of Rohit Patil" class="portrait-img" />
+          </figure>
+          <div class="currently">
+            <p class="mono-label">Currently</p>
+            <p class="currently-line">Shipping · Learning · Reading</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Certified mindset</span><span class="star">★</span>
+        <span>Product-minded</span><span class="star">★</span>
+        <span>Ships weekly</span><span class="star">★</span>
+        <span>Pune → the world</span><span class="star">★</span>
+        <span>Certified mindset</span><span class="star">★</span>
+        <span>Product-minded</span><span class="star">★</span>
+        <span>Ships weekly</span><span class="star">★</span>
+        <span>Pune → the world</span><span class="star">★</span>
+      </div>
+    </div>
+
+    <!-- ============ SELECTED WORK ============ -->
+    <section id="work" class="section wrap">
+      <div class="section-head">
+        <div>
+          <p class="mono-label">§ 01 — Selected work</p>
+          <h2 class="display display-md reveal">Things I've<br />actually shipped.</h2>
+        </div>
+        <span class="mono-label count">6 Projects</span>
+      </div>
+
+      <ol class="work-list">
+        <li class="work-item reveal">
+          <span class="work-num">01</span>
+          <h3 class="work-title">AstraOps</h3>
+          <div class="work-body">
+            <p>An ops-first workspace exploring operator ergonomics for cloud teams. JavaScript, dashboard-driven.</p>
+            <div class="tags"><span>JavaScript</span><span>Node</span><span>Dashboards</span></div>
+          </div>
+          <a class="work-meta" href="https://github.com/rohitpatil9121" target="_blank" rel="noopener">
+            <span class="mono-label">Web App · 2025</span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+
+        <li class="work-item reveal">
+          <span class="work-num">02</span>
+          <h3 class="work-title">Serverless URL Shortener</h3>
+          <div class="work-body">
+            <p>Production-shape URL shortener on AWS Lambda + API Gateway + DynamoDB. Zero servers, minimal moving parts.</p>
+            <div class="tags"><span>AWS Lambda</span><span>API Gateway</span><span>DynamoDB</span><span>Python</span></div>
+          </div>
+          <a class="work-meta" href="https://github.com/rohitpatil9121" target="_blank" rel="noopener">
+            <span class="mono-label">Cloud · 2025</span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+
+        <li class="work-item reveal">
+          <span class="work-num">03</span>
+          <h3 class="work-title">S3 Secure Upload</h3>
+          <div class="work-body">
+            <p>Signed-URL upload flow to S3 with a small browser UI — the shape you actually want in production.</p>
+            <div class="tags"><span>S3</span><span>IAM</span><span>HTML/JS</span></div>
+          </div>
+          <a class="work-meta" href="https://github.com/rohitpatil9121" target="_blank" rel="noopener">
+            <span class="mono-label">Cloud · 2025</span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+
+        <li class="work-item reveal">
+          <span class="work-num">04</span>
+          <h3 class="work-title">AI Smart Agriculture Advisory</h3>
+          <div class="work-body">
+            <p>Farmer-facing advisory system pairing crop signals with an AI recommendation layer.</p>
+            <div class="tags"><span>HTML</span><span>AI</span><span>Advisory</span></div>
+          </div>
+          <a class="work-meta" href="https://github.com/rohitpatil9121" target="_blank" rel="noopener">
+            <span class="mono-label">AI · Web · 2024</span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+
+        <li class="work-item reveal">
+          <span class="work-num">05</span>
+          <h3 class="work-title">Library Management System</h3>
+          <div class="work-body">
+            <p>A full CRUD library flow — the classic build, done properly. Members, catalog, issue &amp; return.</p>
+            <div class="tags"><span>HTML</span><span>CRUD</span></div>
+          </div>
+          <a class="work-meta" href="https://github.com/rohitpatil9121" target="_blank" rel="noopener">
+            <span class="mono-label">Web App · 2024</span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+
+        <li class="work-item reveal">
+          <span class="work-num">06</span>
+          <h3 class="work-title">Oasis Service Automation</h3>
+          <div class="work-body">
+            <p>Internship work automating internal service workflows. Currently in active development.</p>
+            <div class="tags"><span>Python</span><span>Automation</span></div>
+          </div>
+          <a class="work-meta" href="https://github.com/rohitpatil9121" target="_blank" rel="noopener">
+            <span class="mono-label">Automation · 2026</span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ STACK (dark) ============ -->
+    <section id="stack" class="section-dark">
+      <div class="wrap stack-grid">
+        <div>
+          <p class="mono-label">§ 02 — Tools of the trade</p>
+          <h2 class="display display-md reveal">Cloud-native,<br /><em>full-stack</em> to the<br />core.</h2>
+          <p class="stack-copy reveal">
+            I don't pick a team. I pick what fits the problem — from a Lambda handler at
+            3&nbsp;AM to a React screen a customer sees at 9.
+          </p>
+        </div>
+        <div class="pill-cloud reveal">
+          <span class="pill">AWS</span><span class="pill">Lambda</span><span class="pill">DynamoDB</span>
+          <span class="pill">S3</span><span class="pill">API Gateway</span><span class="pill">IAM</span>
+          <span class="pill">CloudWatch</span><span class="pill">Docker</span><span class="pill">Linux</span>
+          <span class="pill">GitHub Actions</span><span class="pill">Python</span><span class="pill">JavaScript</span>
+          <span class="pill">Node.js</span><span class="pill">React</span><span class="pill">HTML</span>
+          <span class="pill">CSS</span><span class="pill">SQL</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INDEX / NUMBERS ============ -->
+    <section id="index" class="section wrap">
+      <p class="mono-label">§ 03 — Index</p>
+      <h2 class="display display-md reveal">By the numbers.</h2>
+
+      <div class="stats">
+        <div class="stat reveal"><span class="stat-num">198</span><span class="mono-label">Commits in the last year</span></div>
+        <div class="stat reveal"><span class="stat-num">6+</span><span class="mono-label">Shipped projects</span></div>
+        <div class="stat reveal"><span class="stat-num">4</span><span class="mono-label">GitHub achievements</span></div>
+        <div class="stat reveal"><span class="stat-num">∞</span><span class="mono-label">Curiosity units</span></div>
+      </div>
+
+      <div class="two-col">
+        <div class="reveal">
+          <h3 class="col-title">Now</h3>
+          <ul class="arrow-list">
+            <li>Automating internal workflows at Oasis (internship).</li>
+            <li>Deepening AWS: from certified thinking to production instincts.</li>
+            <li>Building small, sharp web apps end-to-end.</li>
           </ul>
-          <div class="mt-6 grid grid-cols-3 gap-3 text-center">
-            <div class="stat-mini"><span class="block font-display font-bold text-xl text-primary">3+</span><span class="text-[11px] text-sub">Projects</span></div>
-            <div class="stat-mini"><span class="block font-display font-bold text-xl text-primary">8+</span><span class="text-[11px] text-sub">Skills</span></div>
-            <div class="stat-mini"><span class="block font-display font-bold text-xl text-primary">4</span><span class="text-[11px] text-sub">Certs</span></div>
-          </div>
         </div>
-
-        <!-- floating decorative chips -->
-        <div class="float-chip chip-1"><i class="fa-brands fa-docker"></i> Docker</div>
-        <div class="float-chip chip-2"><i class="fa-brands fa-python"></i> Python</div>
-        <div class="float-chip chip-3"><i class="fa-solid fa-server"></i> EC2</div>
-      </div>
-    </div>
-
-    <a href="#about" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-sub hover:text-primary transition animate-bounce" aria-label="Scroll down">
-      <i class="fa-solid fa-chevron-down text-xl"></i>
-    </a>
-  </section>
-
-  <!-- ============ ABOUT ============ -->
-  <section id="about" class="section">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="text-center max-w-2xl mx-auto reveal">
-        <p class="eyebrow">Get to know me</p>
-        <h2 class="section-title">About Me</h2>
-      </div>
-
-      <div class="mt-12 grid lg:grid-cols-5 gap-10 items-start">
-        <div class="lg:col-span-3 reveal">
-          <p class="text-lg text-ink/85 leading-relaxed">
-            I'm a <strong class="text-primary">Cloud Computing student</strong> pursuing a B.Tech in
-            Computer Science &amp; Engineering with a specialization in Cloud Computing. I love working
-            close to the infrastructure — provisioning on <strong>AWS</strong>, automating repetitive
-            work, and making systems observable.
-          </p>
-          <p class="mt-4 text-sub leading-relaxed">
-            My interests sit at the intersection of <strong class="text-ink">infrastructure monitoring</strong>,
-            <strong class="text-ink">cloud automation</strong>, and <strong class="text-ink">DevOps</strong>.
-            I'm constantly learning modern cloud architectures and turning what I learn into hands-on projects.
-          </p>
-
-          <div class="mt-6 p-5 rounded-2xl bg-gradient-to-r from-primary/5 to-secondary/5 border border-primary/10">
-            <p class="text-sm font-semibold text-primary mb-1"><i class="fa-solid fa-bullseye mr-1.5"></i>Career Goal</p>
-            <p class="text-ink/85">
-              To become a <strong>Cloud Engineer / DevOps Engineer</strong> focused on scalable
-              and observable infrastructure.
-            </p>
-          </div>
-
-          <!-- animated stats -->
-          <div class="mt-8 grid grid-cols-3 gap-4">
-            <div class="counter-card">
-              <span class="counter font-display font-bold text-3xl text-primary" data-target="3">0</span><span class="text-primary text-2xl font-bold">+</span>
-              <p class="text-xs text-sub mt-1">Cloud Projects</p>
-            </div>
-            <div class="counter-card">
-              <span class="counter font-display font-bold text-3xl text-primary" data-target="4">0</span>
-              <p class="text-xs text-sub mt-1">Certifications</p>
-            </div>
-            <div class="counter-card">
-              <span class="counter font-display font-bold text-3xl text-primary" data-target="2027">0</span>
-              <p class="text-xs text-sub mt-1">Graduating</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- strength cards -->
-        <div class="lg:col-span-2 grid sm:grid-cols-2 gap-4 reveal" style="--delay:.1s">
-          <div class="strength-card">
-            <div class="strength-icon bg-primary/10 text-primary"><i class="fa-solid fa-cloud"></i></div>
-            <h3 class="font-display font-semibold mt-3">Cloud Computing</h3>
-            <p class="text-sm text-sub mt-1">Designing and deploying cloud-native solutions.</p>
-          </div>
-          <div class="strength-card">
-            <div class="strength-icon bg-accent/10 text-accent"><i class="fa-solid fa-server"></i></div>
-            <h3 class="font-display font-semibold mt-3">AWS Services</h3>
-            <p class="text-sm text-sub mt-1">EC2, S3, Lambda, IAM, CloudWatch &amp; more.</p>
-          </div>
-          <div class="strength-card">
-            <div class="strength-icon bg-secondary/10 text-secondary"><i class="fa-solid fa-gear"></i></div>
-            <h3 class="font-display font-semibold mt-3">Automation</h3>
-            <p class="text-sm text-sub mt-1">Scripting and CI/CD to remove manual toil.</p>
-          </div>
-          <div class="strength-card">
-            <div class="strength-icon bg-emerald-100 text-emerald-600"><i class="fa-solid fa-chart-line"></i></div>
-            <h3 class="font-display font-semibold mt-3">Monitoring</h3>
-            <p class="text-sm text-sub mt-1">Observability &amp; real-time infra insights.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SKILLS ============ -->
-  <section id="skills" class="section bg-soft">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="text-center max-w-2xl mx-auto reveal">
-        <p class="eyebrow">What I bring</p>
-        <h2 class="section-title">Technical Skills</h2>
-      </div>
-
-      <div class="mt-12 grid lg:grid-cols-2 gap-10 items-center">
-        <!-- progress bars -->
         <div class="reveal">
-          <h3 class="font-display font-semibold text-lg mb-5 flex items-center gap-2"><i class="fa-solid fa-cloud text-primary"></i> Cloud &amp; DevOps</h3>
-          <div class="space-y-4">
-            <div class="skill-bar" data-pct="60"><span>AWS</span></div>
-            <div class="skill-bar" data-pct="80"><span>Docker</span></div>
-            <div class="skill-bar" data-pct="55"><span>Linux</span></div>
-            <div class="skill-bar" data-pct="85"><span>Git / GitHub</span></div>
-            <div class="skill-bar" data-pct="82"><span>CloudWatch</span></div>
-          </div>
-
-          <h3 class="font-display font-semibold text-lg mb-5 mt-8 flex items-center gap-2"><i class="fa-solid fa-code text-secondary"></i> Programming</h3>
-          <div class="space-y-4">
-            <div class="skill-bar" data-pct="50"><span>Python</span></div>
-            <div class="skill-bar" data-pct="45"><span>JavaScript</span></div>
-            <div class="skill-bar" data-pct="95"><span>HTML</span></div>
-            <div class="skill-bar" data-pct="90"><span>CSS</span></div>
-          </div>
+          <h3 class="col-title">Studying</h3>
+          <ul class="arrow-list">
+            <li>B.Tech Cloud Computing — MIT ADT University, Pune.</li>
+            <li>System design, distributed patterns, cost-aware architecture.</li>
+            <li>A little bit of everything, deeply.</li>
+          </ul>
         </div>
+      </div>
+    </section>
 
-        <!-- radar chart -->
-        <div class="reveal" style="--delay:.1s">
-          <div class="glass-card rounded-3xl p-6">
-            <h3 class="font-display font-semibold text-lg mb-2 text-center">Skills Overview</h3>
-            <p class="text-sm text-sub text-center mb-4">Proficiency across core domains</p>
-            <canvas id="skillsRadar" height="320" aria-label="Radar chart of skill proficiency" role="img"></canvas>
+    <!-- ============ CONTACT (coral) ============ -->
+    <section id="contact" class="section-coral">
+      <div class="wrap">
+        <p class="mono-label">§ 04 — Say hi</p>
+        <h2 class="display display-lg reveal">Have a build in mind? <em>Let's</em> make it real.</h2>
+
+        <div class="contact-grid">
+          <div class="contact-links reveal">
+            <a href="https://github.com/rohitpatil9121" target="_blank" rel="noopener" class="contact-link">
+              <span class="mono-label">GitHub</span>
+              <span class="contact-handle">github.com/rohitpatil9121 <span class="arrow" aria-hidden="true">↗</span></span>
+            </a>
+            <a href="https://www.linkedin.com/in/rohit-ramkrishna-patil" target="_blank" rel="noopener" class="contact-link">
+              <span class="mono-label">LinkedIn</span>
+              <span class="contact-handle">rohit-ramkrishna-patil <span class="arrow" aria-hidden="true">↗</span></span>
+            </a>
+          </div>
+          <div class="contact-note reveal">
+            <p>I'm open to internships, freelance builds, and interesting collaborations — anything at the intersection of cloud, product and craft.</p>
+            <p class="mono-label">Pune, India · Response window &lt; 24h</p>
           </div>
         </div>
       </div>
-
-      <!-- skill category cards -->
-      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="skill-cat-card reveal">
-          <div class="skill-icon bg-primary/10 text-primary"><i class="fa-solid fa-cloud"></i></div>
-          <h4 class="font-display font-semibold mt-4">Cloud</h4>
-          <p class="text-sm text-sub mt-1">AWS, EC2, S3, Lambda, IAM, API Gateway, DynamoDB</p>
-        </div>
-        <div class="skill-cat-card reveal" style="--delay:.05s">
-          <div class="skill-icon bg-secondary/10 text-secondary"><i class="fa-solid fa-infinity"></i></div>
-          <h4 class="font-display font-semibold mt-4">DevOps</h4>
-          <p class="text-sm text-sub mt-1">Docker, Kubernetes, CI/CD, Git, Linux administration</p>
-        </div>
-        <div class="skill-cat-card reveal" style="--delay:.1s">
-          <div class="skill-icon bg-accent/10 text-accent"><i class="fa-solid fa-code"></i></div>
-          <h4 class="font-display font-semibold mt-4">Programming</h4>
-          <p class="text-sm text-sub mt-1">Python, JavaScript, HTML5, CSS3, FastAPI</p>
-        </div>
-        <div class="skill-cat-card reveal" style="--delay:.15s">
-          <div class="skill-icon bg-emerald-100 text-emerald-600"><i class="fa-solid fa-chart-line"></i></div>
-          <h4 class="font-display font-semibold mt-4">Monitoring</h4>
-          <p class="text-sm text-sub mt-1">CloudWatch, observability dashboards, alerting</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PROJECTS ============ -->
-  <section id="projects" class="section">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="text-center max-w-2xl mx-auto reveal">
-        <p class="eyebrow">Things I've built</p>
-        <h2 class="section-title">Featured Projects</h2>
-      </div>
-
-      <!-- Featured: AstraOps -->
-      <article class="mt-12 project-featured reveal">
-        <div class="grid lg:grid-cols-2 gap-0 overflow-hidden rounded-3xl glass-card">
-          <div class="project-hero-art relative min-h-[280px] flex items-center justify-center p-8">
-            <span class="absolute top-4 left-4 px-3 py-1 text-xs font-semibold rounded-full bg-white/90 text-primary shadow">⭐ Featured</span>
-            <div class="text-center text-white">
-              <i class="fa-solid fa-satellite-dish text-6xl mb-4 opacity-90"></i>
-              <p class="font-display font-bold text-3xl">AstraOps</p>
-              <p class="text-white/80 text-sm mt-1">Cloud Observability Platform</p>
-            </div>
-          </div>
-          <div class="p-8">
-            <h3 class="font-display font-bold text-2xl">AstraOps</h3>
-            <p class="text-sub mt-3 leading-relaxed">
-              A cloud observability and infrastructure monitoring platform that provides real-time
-              visibility into cloud infrastructure and services — from EC2 and Docker to Kubernetes,
-              enriched with AI-driven infrastructure insights.
-            </p>
-            <ul class="mt-4 grid grid-cols-2 gap-y-2 gap-x-4 text-sm text-ink/80">
-              <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>EC2 Monitoring</li>
-              <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>CloudWatch Integration</li>
-              <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Docker Monitoring</li>
-              <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Kubernetes Monitoring</li>
-              <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>AI Infra Insights</li>
-              <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Real-Time Dashboards</li>
-            </ul>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="badge">AWS</span><span class="badge">FastAPI</span><span class="badge">React</span>
-              <span class="badge">Docker</span><span class="badge">Kubernetes</span><span class="badge">Supabase</span>
-            </div>
-            <div class="mt-6 flex gap-3">
-              <a href="https://github.com/rohitpatil9121" target="_blank" rel="noopener" class="btn-primary text-sm py-2.5"><i class="fa-brands fa-github"></i> View Code</a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project grid -->
-      <div class="mt-8 grid md:grid-cols-2 gap-6">
-        <article class="project-card reveal">
-          <div class="project-art bg-gradient-to-br from-amber-400 to-orange-500">
-            <i class="fa-solid fa-link"></i>
-          </div>
-          <div class="p-6">
-            <h3 class="font-display font-bold text-xl">AWS Serverless URL Shortener</h3>
-            <p class="text-sub text-sm mt-2 leading-relaxed">
-              A fully serverless URL shortening service with a scalable backend — no servers to manage.
-            </p>
-            <ul class="mt-3 text-sm text-ink/80 space-y-1">
-              <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>URL shortening</li>
-              <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Fully serverless architecture</li>
-              <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Scalable backend</li>
-            </ul>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="badge">AWS Lambda</span><span class="badge">API Gateway</span><span class="badge">DynamoDB</span><span class="badge">Python</span>
-            </div>
-            <a href="https://github.com/rohitpatil9121" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"><i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right text-xs"></i></a>
-          </div>
-        </article>
-
-        <article class="project-card reveal" style="--delay:.1s">
-          <div class="project-art bg-gradient-to-br from-primary to-secondary">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-          <div class="p-6">
-            <h3 class="font-display font-bold text-xl">S3 Secure Upload System</h3>
-            <p class="text-sub text-sm mt-2 leading-relaxed">
-              A secure file upload system backed by AWS S3 with fine-grained IAM access control.
-            </p>
-            <ul class="mt-3 text-sm text-ink/80 space-y-1">
-              <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Secure uploads</li>
-              <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Access control</li>
-              <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i>Cloud storage integration</li>
-            </ul>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="badge">AWS S3</span><span class="badge">IAM</span><span class="badge">JavaScript</span><span class="badge">HTML</span>
-            </div>
-            <a href="https://github.com/rohitpatil9121" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"><i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right text-xs"></i></a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ EDUCATION ============ -->
-  <section id="education" class="section bg-soft">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="text-center max-w-2xl mx-auto reveal">
-        <p class="eyebrow">My journey</p>
-        <h2 class="section-title">Education &amp; Certifications</h2>
-      </div>
-
-      <div class="mt-12 grid lg:grid-cols-2 gap-12">
-        <!-- timeline -->
-        <div class="reveal">
-          <h3 class="font-display font-semibold text-lg mb-6 flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-primary"></i> Education</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="glass-card rounded-2xl p-5">
-                <span class="text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full">Expected 2027</span>
-                <h4 class="font-display font-bold mt-3">B.Tech — Computer Science &amp; Engineering</h4>
-                <p class="text-sm text-secondary font-medium">Specialization in Cloud Computing</p>
-                <p class="text-sm text-sub mt-2"><i class="fa-solid fa-building-columns mr-1.5"></i>MIT ADT University</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- certifications -->
-        <div class="reveal" style="--delay:.1s">
-          <h3 class="font-display font-semibold text-lg mb-6 flex items-center gap-2"><i class="fa-solid fa-certificate text-accent"></i> Certifications</h3>
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div class="cert-card">
-              <div class="cert-icon bg-primary/10 text-primary"><i class="fa-brands fa-python"></i></div>
-              <h4 class="font-semibold mt-3 text-sm">Python Programming</h4>
-            </div>
-            <div class="cert-card">
-              <div class="cert-icon bg-secondary/10 text-secondary"><i class="fa-solid fa-network-wired"></i></div>
-              <h4 class="font-semibold mt-3 text-sm">Networking Basics</h4>
-            </div>
-            <div class="cert-card">
-              <div class="cert-icon bg-accent/10 text-accent"><i class="fa-solid fa-terminal"></i></div>
-              <h4 class="font-semibold mt-3 text-sm">Operating System Basics</h4>
-            </div>
-            <div class="cert-card">
-              <div class="cert-icon bg-sky-100 text-sky-600"><i class="fa-brands fa-docker"></i></div>
-              <h4 class="font-semibold mt-3 text-sm">Docker Associate Path</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section id="contact" class="section">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="text-center max-w-2xl mx-auto reveal">
-        <p class="eyebrow">Let's connect</p>
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="text-sub mt-3">Have an opportunity or just want to say hi? My inbox is always open.</p>
-      </div>
-
-      <div class="mt-12 grid lg:grid-cols-5 gap-8">
-        <!-- contact info -->
-        <div class="lg:col-span-2 space-y-4 reveal">
-          <a href="mailto:rohitp9121@gmail.com" class="contact-card">
-            <div class="contact-icon bg-primary/10 text-primary"><i class="fa-solid fa-envelope"></i></div>
-            <div><p class="text-xs text-sub">Email</p><p class="font-medium text-sm break-all">rohitp9121@gmail.com</p></div>
-          </a>
-          <a href="tel:+918668732890" class="contact-card">
-            <div class="contact-icon bg-secondary/10 text-secondary"><i class="fa-solid fa-phone"></i></div>
-            <div><p class="text-xs text-sub">Phone</p><p class="font-medium text-sm">+91 8668732890</p></div>
-          </a>
-          <a href="www.linkedin.com/in/rohit-ramkrishna-patil" target="_blank" rel="noopener" class="contact-card">
-            <div class="contact-icon bg-sky-100 text-sky-600"><i class="fa-brands fa-linkedin-in"></i></div>
-            <div><p class="text-xs text-sub">LinkedIn</p><p class="font-medium text-sm">rohit-patil</p></div>
-          </a>
-          <a href="https://github.com/rohitpatil9121" target="_blank" rel="noopener" class="contact-card">
-            <div class="contact-icon bg-ink/10 text-ink"><i class="fa-brands fa-github"></i></div>
-            <div><p class="text-xs text-sub">GitHub</p><p class="font-medium text-sm">rohitpatil9121</p></div>
-          </a>
-          <div class="contact-card">
-            <div class="contact-icon bg-rose-100 text-rose-500"><i class="fa-solid fa-location-dot"></i></div>
-            <div><p class="text-xs text-sub">Location</p><p class="font-medium text-sm">Pune, India</p></div>
-          </div>
-        </div>
-
-        <!-- form -->
-        <div class="lg:col-span-3 reveal" style="--delay:.1s">
-          <form id="contact-form" class="glass-card rounded-3xl p-7 space-y-5" novalidate>
-            <div class="grid sm:grid-cols-2 gap-5">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" />
-                <p class="error-msg"></p>
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
-                <p class="error-msg"></p>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="What's this about?" />
-              <p class="error-msg"></p>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell me a bit more..."></textarea>
-              <p class="error-msg"></p>
-            </div>
-            <button type="submit" class="btn-primary w-full justify-center">
-              <i class="fa-solid fa-paper-plane"></i> Send Message
-            </button>
-            <div id="form-success" class="hidden items-center gap-2 text-sm font-medium text-emerald-600 bg-emerald-50 rounded-xl p-3">
-              <i class="fa-solid fa-circle-check"></i> Thanks! Your message has been sent. I'll get back to you soon.
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="border-t border-slate-100 py-10">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-5">
-      <div class="text-center sm:text-left">
-        <p class="font-display font-bold text-lg">Rohit Patil</p>
-        <p class="text-sm text-sub">Built with <span class="text-rose-500">❤</span> by Rohit Patil</p>
-      </div>
-      <div class="flex items-center gap-4">
-        <a href="https://github.com/rohitpatil9121" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/rohit-patil-80b540308" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="mailto:rohitp9121@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-      </div>
-      <p class="text-sm text-sub">© 2026 Rohit Patil</p>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span class="mono-label">© 2026 Rohit Patil</span>
+      <span class="mono-label">Handcrafted in Pune · No templates were harmed</span>
     </div>
   </footer>
-
-  <!-- Back to top -->
-  <button id="back-to-top" class="fixed bottom-6 right-6 z-40 grid place-items-center w-12 h-12 rounded-full text-white bg-gradient-to-br from-primary to-secondary shadow-lg shadow-primary/40 opacity-0 pointer-events-none translate-y-3 transition-all" aria-label="Back to top">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
 
   <script src="js/script.js" defer></script>
 </body>
