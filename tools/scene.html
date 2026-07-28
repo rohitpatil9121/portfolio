@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html,body{margin:0;background:#0a0d12;overflow:hidden}
+  #stage{width:640px;height:360px;position:relative}
+  svg{position:absolute;inset:0}
+  text{font-family:'JetBrains Mono',ui-monospace,monospace}
+</style>
+</head>
+<body>
+<div id="stage"><svg id="s" viewBox="0 0 640 360" width="640" height="360"></svg></div>
+<script>
+/* Deterministic scene: setT(t) with t in [0,1] draws one frame.
+   Nothing is time-driven, so headless capture is exact and repeatable. */
+
+const CFG = [
+  { name:'oasis',   c:'#25D366', icon:'chat',  panels:['list','pin'] },
+  { name:'docintel',c:'#FF9900', icon:'doc',   panels:['rows','wave'] },
+  { name:'projlab', c:'#0EA5A4', icon:'curve', panels:['fan','table'] },
+  { name:'astraops',c:'#4CC2FF', icon:'pulse', panels:['chart','gauge'] }
+];
+const P = CFG[new URLSearchParams(location.search).get('p') || 0];
+const SVG='http://www.w3.org/2000/svg';
+const s=document.getElementById('s');
+
+// deterministic PRNG so the bokeh field is identical every run
+let seed=7;const rnd=()=>(seed=seed*1103515245+12345&0x7fffffff)/0x7fffffff;
+const BOKEH=Array.from({length:46},()=>({x:rnd()*640,y:rnd()*360,r:3+rnd()*26,
+  o:0.03+rnd()*0.09,sp:0.2+rnd()*0.8,ring:rnd()>0.72}));
+
+const el=(n,a)=>{const e=document.createElementNS(SVG,n);for(const k in a)e.setAttribute(k,a[k]);return e};
+const lerp=(a,b,t)=>a+(b-a)*t;
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const clamp01=t=>Math.max(0,Math.min(1,t));
+
+// isometric cube geometry
+const CX=320, CY=150, W=74, H=42, D=86;
+const A=[CX,CY], B=[CX+W,CY+H], C=[CX,CY+2*H], Dp=[CX-W,CY+H];
+const add=(p,dy)=>[p[0],p[1]+dy];
+const path=pts=>'M'+pts.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join('L')+'Z';
+const mix=(p,q,t)=>[lerp(p[0],q[0],t),lerp(p[1],q[1],t)];
+
+function faceGrid(o,u,v,n){ // grid lines on a parallelogram
+  const out=[];
+  for(let i=1;i<n;i++){
+    const f=i/n;
+    out.push([mix(o,u,f), mix(mix(o,v,1),mix(u,[u[0]+v[0]-o[0],u[1]+v[1]-o[1]],1),f)]);
+    out.push([mix(o,v,f), mix(mix(o,u,1),mix(v,[u[0]+v[0]-o[0],u[1]+v[1]-o[1]],1),f)]);
+  }
+  return out;
+}
+
+function icon(kind,cx,cy,col,op){
+  const g=el('g',{stroke:col,fill:'none','stroke-width':2,'stroke-linecap':'round',
+                  'stroke-linejoin':'round',opacity:op});
+  if(kind==='chat'){g.appendChild(el('path',{d:`M${cx-16} ${cy-10}h32v20h-20l-8 7v-7h-4z`}));}
+  if(kind==='doc'){g.appendChild(el('path',{d:`M${cx-12} ${cy-14}h16l8 8v20h-24z`}));
+                   g.appendChild(el('path',{d:`M${cx-6} ${cy+2}h12M${cx-6} ${cy+8}h8`}));}
+  if(kind==='curve'){g.appendChild(el('path',{d:`M${cx-16} ${cy+10}q10 2 16-6t16-12`}));
+                     g.appendChild(el('path',{d:`M${cx+12} ${cy-8}h6v6`}));}
+  if(kind==='pulse'){g.appendChild(el('path',{d:`M${cx-18} ${cy}h8l4-9 6 18 5-11 3 2h10`}));}
+  return g;
+}
+
+function panel(kind,x,y,w,h,col,op){
+  const g=el('g',{opacity:op});
+  g.appendChild(el('rect',{x,y,width:w,height:h,rx:3,fill:'#0d1117',
+    stroke:'rgba(255,255,255,.42)','stroke-width':1}));
+  const L=(a,b,c,d,st,sw)=>g.appendChild(el('line',{x1:a,y1:b,x2:c,y2:d,stroke:st,'stroke-width':sw||1}));
+  const R=(a,b,c,d,f)=>g.appendChild(el('rect',{x:a,y:b,width:c,height:d,fill:f}));
+  if(kind==='list'||kind==='rows'||kind==='table'){
+    for(let i=0;i<4;i++){R(x+8,y+9+i*11,w-46,3,'rgba(255,255,255,.34)');R(x+w-30,y+9+i*11,22,3,col);}
+  }
+  if(kind==='pin'){g.appendChild(el('path',{d:`M${x+w/2} ${y+12}c7 0 12 5 12 12 0 9-12 20-12 20s-12-11-12-20c0-7 5-12 12-12z`,
+      fill:'none',stroke:col,'stroke-width':2}));
+    g.appendChild(el('circle',{cx:x+w/2,cy:y+24,r:4,fill:col}));}
+  if(kind==='chart'||kind==='curve'){
+    g.appendChild(el('path',{d:`M${x+8} ${y+h-12}q14-4 22-18t26-14`,fill:'none',stroke:col,'stroke-width':2}));
+    for(let i=0;i<4;i++)L(x+8+i*((w-16)/4),y+8,x+8+i*((w-16)/4),y+h-8,'rgba(255,255,255,.12)');
+  }
+  if(kind==='fan'){
+    for(let i=0;i<3;i++)g.appendChild(el('path',{d:`M${x+8} ${y+h-10}q${(w-20)/2} ${-14-i*10} ${w-18} ${-20-i*14}`,
+      fill:'none',stroke:col,'stroke-width':1.5,opacity:1-i*0.28}));
+  }
+  if(kind==='gauge'){
+    g.appendChild(el('path',{d:`M${x+12} ${y+h-14}a26 26 0 0 1 52 0`,fill:'none',
+      stroke:'rgba(255,255,255,.22)','stroke-width':5}));
+    g.appendChild(el('path',{d:`M${x+12} ${y+h-14}a26 26 0 0 1 34-24`,fill:'none',stroke:col,'stroke-width':5}));
+  }
+  if(kind==='wave'){
+    let d=`M${x+8} ${y+h/2}`;for(let i=0;i<9;i++)d+=`l4 ${i%2?-12:12}l4 ${i%2?12:-12}`;
+    g.appendChild(el('path',{d,fill:'none',stroke:col,'stroke-width':2}));
+  }
+  return g;
+}
+
+function setT(t){
+  while(s.firstChild)s.removeChild(s.firstChild);
+
+  const defs=el('defs',{});
+  const gl=el('radialGradient',{id:'gl'});
+  gl.appendChild(el('stop',{offset:'0%','stop-color':P.c,'stop-opacity':'.30'}));
+  gl.appendChild(el('stop',{offset:'100%','stop-color':P.c,'stop-opacity':'0'}));
+  defs.appendChild(gl);
+  s.appendChild(defs);
+
+  s.appendChild(el('rect',{width:640,height:360,fill:'#0a0d12'}));
+  s.appendChild(el('ellipse',{cx:CX,cy:CY+60,rx:250,ry:150,fill:'url(#gl)'}));
+
+  // bokeh
+  const bk=el('g',{});
+  BOKEH.forEach(b=>{
+    const y=(b.y-t*b.sp*26+360)%360;
+    bk.appendChild(el('circle',b.ring
+      ?{cx:b.x,cy:y,r:b.r,fill:'none',stroke:'#9fb4c9','stroke-width':1,opacity:b.o}
+      :{cx:b.x,cy:y,r:b.r,fill:'#9fb4c9',opacity:b.o*0.8}));
+  });
+  s.appendChild(bk);
+
+  // traces + travelling nodes
+  const tr=el('g',{});
+  const routes=[[[60,120],[170,120],[210,168]],[[580,150],[470,150],[430,192]]];
+  routes.forEach((r,ri)=>{
+    const d='M'+r.map(p=>p.join(' ')).join('L');
+    tr.appendChild(el('path',{d,fill:'none',stroke:'rgba(120,200,255,.34)',
+      'stroke-width':1.4,'stroke-dasharray':'2 6','stroke-linecap':'round'}));
+    for(let k=0;k<2;k++){
+      const f=(t*1.6+k*0.5+ri*0.25)%1;
+      const seg=f*(r.length-1), i=Math.min(r.length-2,Math.floor(seg));
+      const q=mix(r[i],r[i+1],seg-i);
+      tr.appendChild(el('circle',{cx:q[0],cy:q[1],r:3.2,fill:'#7fd4ff',
+        opacity:(0.35+0.65*Math.sin(f*Math.PI)).toFixed(2)}));
+    }
+  });
+  s.appendChild(tr);
+
+  // panels fly in
+  const pin=ease(clamp01((t-0.10)/0.34));
+  s.appendChild(panel(P.panels[0],44,44,150,74,P.c,pin));
+  const pin2=ease(clamp01((t-0.24)/0.34));
+  s.appendChild(panel(P.panels[1],452,214,146,74,P.c,pin2));
+
+  // cube body (top slab drawn separately so it can lift)
+  const lift=Math.sin(clamp01((t-0.12)/0.7)*Math.PI)*30;
+  const body=el('g',{});
+  body.appendChild(el('path',{d:path([Dp,C,add(C,D),add(Dp,D)]),fill:P.c,opacity:.34}));
+  body.appendChild(el('path',{d:path([C,B,add(B,D),add(C,D)]),fill:P.c,opacity:.20}));
+  [[Dp,C,add(Dp,D)],[C,B,add(C,D)]].forEach(([o,u,v])=>{
+    faceGrid(o,u,v,3).forEach(([p,q])=>body.appendChild(
+      el('line',{x1:p[0],y1:p[1],x2:q[0],y2:q[1],stroke:P.c,opacity:.5,'stroke-width':1})));
+  });
+  body.appendChild(el('path',{d:path([Dp,C,B,add(B,D),add(C,D),add(Dp,D)]),
+    fill:'none',stroke:P.c,'stroke-width':1.6,opacity:.9}));
+  s.appendChild(body);
+
+  // lifting top slab + icon
+  const top=el('g',{transform:`translate(0 ${-lift.toFixed(2)})`});
+  top.appendChild(el('path',{d:path([A,B,C,Dp]),fill:P.c,opacity:.62}));
+  top.appendChild(el('path',{d:path([A,B,C,Dp]),fill:'none',stroke:'#eafff2','stroke-width':1.4,opacity:.85}));
+  top.appendChild(icon(P.icon,CX,CY+H,'#ffffff',clamp01((lift-6)/14)));
+  s.appendChild(top);
+}
+window.setT=setT;
+setT(0);
+</script>
+</body>
+</html>

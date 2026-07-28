@@ -1,0 +1,6 @@
+# Source animations — 12 MB each. The optimised .webp beside them is what
+# the site actually loads, so the originals stay out of the repo.
+assets/video/*.gif
+
+# Local scratch
+.21st/
